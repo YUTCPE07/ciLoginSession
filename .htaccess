@@ -1,0 +1,14 @@
+#RewriteEngine On
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteRule ^(.*)$ index.php/$1 [L]
+
+
+RewriteEngine on
+RewriteBase /ciloginsession
+
+
+RewriteCond %{REQUESS_FILENAME} !-f
+RewriteCond %{REQUESS_FILENAME} !-d
+RewriteCond $1 !^(index\.php|assets|css|js|images|fonts|plugins|upload|action)
+RewriteRule ^(.*)$ /ciloginsession/index.php?/$1 [L]
